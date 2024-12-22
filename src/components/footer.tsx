@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin,} from "lucide-react";
 import { useTheme } from "@/components/theme-provider"; // Assuming your theme provider is set up
 
 export function Footer() {
