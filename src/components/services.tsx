@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Users, PenTool, Video, TrendingUp, Globe, Mail, BookOpen, Tv, Clapperboard } from "lucide-react";
+import { Users, PenTool, Video, TrendingUp, Globe,BookOpen, Tv, Clapperboard } from "lucide-react";
 
 const services = [
   {
