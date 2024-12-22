@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Users, PenTool, Video, TrendingUp, Globe, Mail, BookOpen, Tv } from "lucide-react";
+import { Users, PenTool, Video, TrendingUp, Globe, Mail, BookOpen, Tv, Clapperboard } from "lucide-react";
 
 const services = [
   {
@@ -21,16 +21,23 @@ const services = [
     icon: PenTool,
   },
   {
-    title: "Content Creation",
+    title: "Video Editing", 
+    description: 
+      "Create professionally edited videos with seamless transitions, effects, and compelling storytelling to captivate your audience.",
+    icon: Clapperboard, 
+  },
+  
+  {
+    title: "Web Development",
     description:
-      "Produce captivating videos, photography, and scroll-stopping content for your audience.",
-    icon: Video,
+      "Build responsive, visually engaging websites that exceed your business objectives.",
+    icon: Globe,
   },
   {
-    title: "Influencer Marketing",
+    title: "Professional Camera Shoots",
     description:
-      "Boost brand visibility through strategic influencer collaborations and targeted campaigns.",
-    icon: TrendingUp,
+      "Design compelling email campaigns to drive sales and nurture customer relationships.",
+    icon: Video,
   },
   {
     title: "Ads Campaign",
@@ -39,22 +46,16 @@ const services = [
     icon: Tv,
   },
   {
+    title: "Influencer Marketing",
+    description:
+      "Boost brand visibility through strategic influencer collaborations and targeted campaigns.",
+    icon: TrendingUp,
+  },
+  {
     title: "Consultancy",
     description:
       "Leverage data-driven insights and competitor analysis for effective, actionable strategies.",
     icon: BookOpen,
-  },
-  {
-    title: "Email Marketing",
-    description:
-      "Design compelling email campaigns to drive sales and nurture customer relationships.",
-    icon: Mail,
-  },
-  {
-    title: "Web Development",
-    description:
-      "Build responsive, visually engaging websites that exceed your business objectives.",
-    icon: Globe,
   },
 ];
 

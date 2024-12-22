@@ -15,11 +15,17 @@ export function Hero() {
         </svg>
       </div>
       <div className="container relative z-10 mx-auto px-4 text-center">
+                <h1
+            className="text-5xl md:text-7xl font-bold tracking-tighter mb-6"
+            style={{ color: "#3975FA" }}>
+            Hesh Media
+          </h1>
+
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-foreground dark:text-white">
           Transform Your <span className="text-red-500 dark:text-red-400">Social Media</span> Presence
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-          We help brands create meaningful connections through strategic social media marketing
+        Empowering brands with impactful content, elevated strategies, and unmatched growth to thrive in the digital landscape.
         </p>
         <Button
           size="lg"

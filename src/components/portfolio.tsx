@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 const clients = [
-  { name: "Dental Studio Amritsar", logo: "assets/dentalstudio_amritsar.jpg", link: "https://instagram.com/dentalstudio_amritsar" },
+  { name: "Dr Yukti's Dental Studio", logo: "assets/dentalstudio_amritsar.jpg", link: "https://instagram.com/dentalstudio_amritsar" },
   { name: "Dental Excellence Ludhiana", logo: "assets/dentalexcellence.ludhiana.jpg", link: "https://instagram.com/dentalexcellence.ludhiana" },
-  { name: "GDGTH Amr", logo: "assets/gdgth.amr.jpg", link: "https://instagram.com/gdgth.amr" },
+  { name: "GD Goenka Toddler House", logo: "assets/gdgth.amr.jpg", link: "https://instagram.com/gdgth.amr" },
   { name: "Kmaxx American Hospital", logo: "assets/kmaxxamericanhospital.jpg", link: "https://instagram.com/kmaxxamericanhospital" },
   { name: "Kmaxx CDC", logo: "assets/kmaxx_cdc.jpg", link: "https://instagram.com/kmaxx_cdc" },
-  { name: "Dr. Palika Dental Care Centre", logo: "assets/drpalikadentalcarecentre.jpg", link: "https://instagram.com/drpalikadentalcarecentre" },
+  { name: "Dr Palika Dental", logo: "assets/drpalikadentalcarecentre.jpg", link: "https://instagram.com/drpalikadentalcarecentre" },
 ];
 
 export function Portfolio() {
@@ -28,10 +28,10 @@ export function Portfolio() {
               href={client.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group block"
+              className="block"
             >
-              <Card className="relative bg-card dark:bg-gray-800 hover:bg-card/80 dark:hover:bg-gray-700 transition duration-300 h-[240px] flex flex-col items-center justify-start group border-2 border-transparent hover:border-[#58a6ff]/50 shadow-md hover:shadow-lg p-4">
-                <CardContent className="flex flex-col items-center justify-start h-full mt-8">
+              <Card className="relative bg-card dark:bg-gray-800 hover:bg-card/80 dark:hover:bg-gray-700 transition duration-300 h-[240px] flex flex-col items-center justify-center group border-2 border-transparent hover:border-[#58a6ff]/50 shadow-md hover:shadow-lg">
+                <CardContent className="p-6 flex flex-col items-center justify-center">
                   <div className="flex items-center justify-center w-20 h-20 mb-3">
                     <img
                       src={client.logo}
@@ -39,13 +39,18 @@ export function Portfolio() {
                       className="w-full h-full rounded-full object-cover"
                     />
                   </div>
-                  <span className="text-foreground dark:text-white text-center font-semibold mt-2">
+                  <span className="text-foreground dark:text-white text-center">
                     {client.name}
                   </span>
                 </CardContent>
               </Card>
             </a>
           ))}
+          <div className="col-span-2 md:col-span-3 lg:col-span-6 flex justify-center items-center">
+            <div className="text-lg font-bold text-gray-600 dark:text-gray-300">
+              and many more...
+            </div>
+          </div>
         </div>
       </div>
     </section>

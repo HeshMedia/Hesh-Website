@@ -8,22 +8,23 @@ export function About() {
               We're More Than Just Another Agency
             </h2>
             <p className="text-lg text-muted-foreground dark:text-gray-400 mb-6">
-              At hesh, we believe in the power of authentic connections. Our approach combines creative storytelling with data-driven strategies to help brands thrive in the digital space.
+            At Hesh Media, our mission is to elevate your brand’s presence with bold ideas and smart strategies. From crafting compelling campaigns to delivering tangible results, our team is dedicated to your success in the ever-changing digital landscape.
             </p>
             <p className="text-lg text-muted-foreground dark:text-gray-400">
-              Founded in 2024, we've helped numerous brands transform their social media presence and achieve remarkable growth.
+            Founded in 2023 in Amritsar, we’ve partnered with brands to achieve exceptional growth and redefine their digital impact.
             </p>
           </div>
-          <div className="relative h-[400px] bg-muted dark:bg-gray-800 rounded-2xl overflow-hidden">
-            <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="about-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M0 0h40v40H0z" fill="none" />
-                  <circle cx="20" cy="20" r="1.5" fill="currentColor" className="text-primary/20 dark:text-blue-500/30" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#about-pattern)" />
-            </svg>
+          <div className="relative">
+            <div className="relative h-[400px] w-full rounded-2xl overflow-hidden group">
+
+              <img
+                src="assets/office.jpg"
+                alt="Office"
+                className="w-full h-full object-cover rounded-2xl border-4 border-gray-300 dark:border-gray-700"
+              />
+
+              <div className="absolute inset-0 rounded-2xl border-4 border-transparent group-hover:border-[#58a6ff]/50 transition-all duration-300"></div>
+            </div>
           </div>
         </div>
       </div>
