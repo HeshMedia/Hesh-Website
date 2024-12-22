@@ -60,41 +60,43 @@ export function Contact() {
           </p>
         </div>
         <form ref={form} onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
-          <div>
-            <Input
-              name="from_name"
-              placeholder="Your Name"
-              required
-              className="bg-background dark:bg-gray-800 border-primary/20 dark:border-primary/40"
-            />
-          </div>
-          <div>
-            <Input
-              name="reply_to"
-              type="email"
-              placeholder="Your Email"
-              required
-              className="bg-background dark:bg-gray-800 border-primary/20 dark:border-primary/40"
-            />
-          </div>
-          <div>
-            <Textarea
-              name="message"
-              placeholder="Your Message"
-              className="min-h-[150px] bg-background dark:bg-gray-800 border-primary/20 dark:border-primary/40"
-              required
-            />
-          </div>
+        <div>
+          <Input
+            name="from_name"
+            placeholder="Your Name"
+            required
+            className="bg-background dark:bg-gray-800 text-foreground dark:text-white border-primary/20 dark:border-primary/40"
+          />
+        </div>
+        <div>
+          <Input
+            name="reply_to"
+            type="email"
+            placeholder="Your Email"
+            required
+            className="bg-background dark:bg-gray-800 text-foreground dark:text-white border-primary/20 dark:border-primary/40"
+          />
+        </div>
+        <div>
+          <Textarea
+            name="message"
+            placeholder="Your Message"
+            className="min-h-[150px] bg-background dark:bg-gray-800 text-foreground dark:text-white border-primary/20 dark:border-primary/40"
+            required
+          />
+        </div>
+        <div className="flex justify-center"> {/* Add this wrapper to center the button */}
           <Button
             type="submit"
             disabled={isSending} // Disable button while sending
-            className={`w-full bg-primary hover:bg-primary/90 dark:bg-blue-600 text-primary-foreground ${
+            className={`w-full md:w-auto bg-primary hover:bg-primary/90 dark:bg-blue-600 text-primary-foreground ${
               isSending ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
             {isSending ? "Sending..." : "Send Message"}
           </Button>
-        </form>
+        </div>
+      </form>
       </div>
     </section>
   );

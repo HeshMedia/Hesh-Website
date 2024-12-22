@@ -67,7 +67,7 @@ export function Reviews(): JSX.Element {
         }
 
         .animate-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scroll 10s linear infinite;
           will-change: transform;
         }
 
