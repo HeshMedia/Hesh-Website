@@ -20,7 +20,7 @@ const projects = [
     description: "Rachit leads the team with a vision for growth and success.",
     src: "https://images.unsplash.com/photo-1605106702842-01a887a31122?q=80&w=500&auto=format&fit=crop",
     backgroundImage:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1000&h=600&fit=crop", // Example background image
+      "assets/bg.jpg", // Subtle blue
   },
   {
     title: "Simran Khosla",
@@ -28,7 +28,7 @@ const projects = [
     description: "Simran is the creative force behind our designs and visuals.",
     src: "https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?w=500&auto=format&fit=crop&q=60",
     backgroundImage:
-      "assets/bg_simran.png",
+      "assets/bg.jpg", // Subtle pink
   },
   {
     title: "Arushi Juneja",
@@ -36,23 +36,26 @@ const projects = [
     description: "Arushi crafts compelling stories through stunning visuals.",
     src: "https://images.unsplash.com/photo-1605106901227-991bd663255c?w=500&auto=format&fit=crop",
     backgroundImage:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1000&h=600&fit=crop",
+      "assets/bg.jpg", // Subtle green
   },
   {
     title: "Ashwath Soni",
     subtitle: "The Tech Guy",
     description: "Ashwath handles all things tech with precision and expertise.",
     src: "assets/Ashwath.jpg",
-    backgroundImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1000&h=600&fit=crop",
+    backgroundImage:
+      "assets/bg.jpg", // Subtle orange
   },
   {
     title: "Naman",
     subtitle: "Editor",
     description: "Naman crafts compelling stories and ensures quality output.",
     src: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=500&auto=format&fit=crop",
-    backgroundImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1000&h=600&fit=crop",
+    backgroundImage:
+      "assets/bg.jpg", // Subtle purple
   },
 ];
+
 
 export function TeamSection(): JSX.Element {
   const container = useRef(null);

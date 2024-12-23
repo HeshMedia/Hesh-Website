@@ -2,7 +2,7 @@ import { AboutNavbar } from "@/components/aboutNavbar";
 import { AboutHero } from "@/components/aboutHero";
 import { TeamSection } from "@/components/teamSection";
 import { ValuesSection } from "@/components/valuesSection";
-import { GallerySection } from "@/components/GallerySection";
+import { GallerySection } from "@/components/gallerySection";
 import { Footer } from "@/components/footer";
 
 export function AboutPage() {
