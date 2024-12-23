@@ -1,3 +1,7 @@
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/dist/css/splide.min.css";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+
 interface Review {
   client: string;
   designation: string;
@@ -8,7 +12,7 @@ const reviews: Review[] = [
   {
     client: "Dr Yukti",
     designation: "Dental Studio Amritsar",
-    review: "My personal brand has seen remarkable growth, with their focus on delivering high-quality content",
+    review: "My personal brand has seen remarkable growth, with their focus on delivering high-quality content.",
   },
   {
     client: "Ms. Chitvan Kochar",
@@ -27,6 +31,29 @@ const reviews: Review[] = [
   },
 ];
 
+const options = {
+  type: "loop",
+  perPage: 3,
+  gap: "1rem",
+  pagination: false,
+  arrows: false, 
+  drag: "free",
+  autoScroll: {
+    speed: 1,
+    pauseOnHover: true, 
+  },
+  breakpoints: {
+    640: {
+      perPage: 1,
+      gap: "0.5rem",
+    },
+    1280: {
+      perPage: 2,
+      gap: "1rem",
+    },
+  },
+};
+
 export function Reviews(): JSX.Element {
   return (
     <section
@@ -37,17 +64,16 @@ export function Reviews(): JSX.Element {
         <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-8 text-foreground dark:text-white">
           Client Reviews
         </h2>
-        <div className="relative overflow-hidden group">
-          <div className="flex animate-scroll space-x-6">
-            {[...reviews, ...reviews].map((review, index) => (
+        <Splide options={options} extensions={{ AutoScroll }}>
+          {reviews.map((review, index) => (
+            <SplideSlide key={index}>
               <div
-                key={index}
-                className="flex-none w-[350px] md:w-[380px] bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center h-[190px] flex flex-col"
+                className="flex-none w-full bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md text-center h-[190px] flex flex-col"
               >
-                <div className="flex flex-col items-center h-[60px] mb-6">
-                 <p className="font-bold text-lg mb-1 text-[#3975FA]">
-                {review.client}
-                 </p>
+                <div className="flex flex-col items-center mb-6">
+                  <p className="font-bold text-lg mb-1 text-[#3975FA]">
+                    {review.client}
+                  </p>
                   <p className="text-sm text-muted-foreground dark:text-gray-400">
                     {review.designation}
                   </p>
@@ -56,33 +82,10 @@ export function Reviews(): JSX.Element {
                   "{review.review}"
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
+            </SplideSlide>
+          ))}
+        </Splide>
       </div>
-      <style>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-
-        .animate-scroll {
-          animation: scroll 10s linear infinite;
-          will-change: transform;
-        }
-
-        .group:hover .animate-scroll {
-          animation-play-state: paused;
-        }
-
-        .line-clamp-4 {
-          display: -webkit-box;
-          -webkit-line-clamp: 4;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      `}</style>
     </section>
   );
 }
-

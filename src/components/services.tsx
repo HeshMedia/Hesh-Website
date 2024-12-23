@@ -1,11 +1,10 @@
-
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Users, PenTool, Video, TrendingUp, Globe,BookOpen, Tv, Clapperboard } from "lucide-react";
+import { Users, PenTool, Video, TrendingUp, Globe, BookOpen, Tv, Clapperboard } from "lucide-react";
 
 const services = [
   {
@@ -13,49 +12,56 @@ const services = [
     description:
       "Transform your social presence with professional, consistent branding and engaging posts.",
     icon: Users,
+    to: "/services/smm", // Navigation link for the service
   },
   {
     title: "Graphic Designing",
     description:
       "Create visually stunning content, including logos, infographics, and tailored designs.",
     icon: PenTool,
+    to: "/services/graphic-design",
   },
   {
-    title: "Video Editing", 
-    description: 
+    title: "Video Editing",
+    description:
       "Create professionally edited videos with seamless transitions, effects, and compelling storytelling to captivate your audience.",
-    icon: Clapperboard, 
+    icon: Clapperboard,
+    to: "/services/video-editing",
   },
-  
   {
     title: "Web Development",
     description:
       "Build responsive, visually engaging websites that exceed your business objectives.",
     icon: Globe,
+    to: "/services/web-development",
   },
   {
     title: "Professional Camera Shoots",
     description:
       "Design compelling email campaigns to drive sales and nurture customer relationships.",
     icon: Video,
+    to: "/services/camera-shoots",
   },
   {
     title: "Ads Campaign",
     description:
       "Maximize reach with tailored ad strategies on platforms like Instagram, Facebook, and Google.",
     icon: Tv,
+    to: "/services/ads-campaign",
   },
   {
     title: "Influencer Marketing",
     description:
       "Boost brand visibility through strategic influencer collaborations and targeted campaigns.",
     icon: TrendingUp,
+    to: "/services/influencer-marketing",
   },
   {
     title: "Consultancy",
     description:
       "Leverage data-driven insights and competitor analysis for effective, actionable strategies.",
     icon: BookOpen,
+    to: "/services/consultancy",
   },
 ];
 
@@ -78,6 +84,7 @@ export function Services() {
           {services.map((service) => (
             <Card
               key={service.title}
+              to={service.to} // Pass the `to` prop for navigation
               className="relative overflow-hidden group backdrop-blur-sm bg-card/50 dark:bg-gray-800 border-2 border-transparent hover:border-[#58a6ff]/50 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               <CardHeader>

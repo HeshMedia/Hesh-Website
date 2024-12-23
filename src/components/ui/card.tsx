@@ -1,20 +1,28 @@
 import * as React from "react";
-
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom"; // Import Link for navigation
 
-const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "rounded-lg border bg-gray-50 text-card-foreground shadow-sm dark:bg-card", // Updated bg-gray-50 for light theme
-      className
-    )}
-    {...props}
-  />
-));
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  to?: string; // Add "to" prop for navigation
+}
+
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className, to, ...props }, ref) => {
+    const cardContent = (
+      <div
+        ref={ref}
+        className={cn(
+          "rounded-lg border bg-gray-50 text-card-foreground shadow-sm dark:bg-card hover:shadow-md transition-shadow", // Added hover effect
+          className
+        )}
+        {...props}
+      />
+    );
+
+    // If "to" prop is provided, wrap card content in Link
+    return to ? <Link to={to}>{cardContent}</Link> : cardContent;
+  }
+);
 Card.displayName = "Card";
 
 const CardHeader = React.forwardRef<
@@ -76,4 +84,11 @@ const CardFooter = React.forwardRef<
 ));
 CardFooter.displayName = "CardFooter";
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent };
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+};
