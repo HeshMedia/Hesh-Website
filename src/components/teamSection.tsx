@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
+import { WhatsApp } from "./whatsapp";
 
 interface CardProps {
   i: number;
@@ -17,43 +18,43 @@ const projects = [
   {
     title: "Rachit Gupta",
     subtitle: "Co-Founder and CEO",
-    description: "Rachit leads the team with a vision for growth and success.",
-    src: "https://images.unsplash.com/photo-1605106702842-01a887a31122?q=80&w=500&auto=format&fit=crop",
+    description: "Rachit is at the helm of a digital agency that’s redefining how brands connect with the modern world. With a focus on innovation, strategy, and authentic storytelling, he’s driving change and helping businesses thrive in the fast-paced digital era.",
+    src: "assets/team/Rachit.png",
     backgroundImage:
-      "assets/bg.jpg", // Subtle blue
+      "assets/team/3.png", 
   },
   {
     title: "Simran Khosla",
     subtitle: "Co-Founder and Graphic Designer",
-    description: "Simran is the creative force behind our designs and visuals.",
-    src: "https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?w=500&auto=format&fit=crop&q=60",
+    description: "Simran is the creative force who turned bold ideas into visual masterpieces. With a sharp eye for design and a passion for innovation, she leads the team in crafting stunning visuals that make brands pop and leave a lasting impression.",
+    src: "assets/team/Simran.png",
     backgroundImage:
-      "assets/bg.jpg", // Subtle pink
+      "assets/team/2.png", 
   },
   {
     title: "Arushi Juneja",
     subtitle: "Creative Head",
-    description: "Arushi crafts compelling stories through stunning visuals.",
-    src: "https://images.unsplash.com/photo-1605106901227-991bd663255c?w=500&auto=format&fit=crop",
+    description: "Arushi merges innovative creativity with strategic insight to produce compelling content that accelerates brand growth and fosters deep audience engagement.",
+    src: "assets/team/Arushi.jpg",
     backgroundImage:
-      "assets/bg.jpg", // Subtle green
+      "assets/team/1.png", 
   },
   {
     title: "Ashwath Soni",
     subtitle: "The Tech Guy",
-    description: "Ashwath handles all things tech with precision and expertise.",
-    src: "assets/Ashwath.jpg",
+    description: "Ashwath, our tech expert, powers with innovative solutions and seamless digital experiences, keeping us ahead of the curve.",
+    src: "assets/team/Ashwath.jpg",
     backgroundImage:
-      "assets/bg.jpg", // Subtle orange
+      "assets/team/5.png", 
   },
   {
     title: "Naman",
     subtitle: "Editor",
-    description: "Naman crafts compelling stories and ensures quality output.",
-    src: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=500&auto=format&fit=crop",
+    description: "Naman, our skilled video editor, brings stories to life with his expert editing, turning raw footage into captivating visuals that engage and inspire audiences.",
+    src: "assets/team/Naman.jpg",
     backgroundImage:
-      "assets/bg.jpg", // Subtle purple
-  },
+      "assets/team/4.png",
+  }
 ];
 
 
@@ -83,7 +84,7 @@ export function TeamSection(): JSX.Element {
               title={project.title}
               subtitle={project.subtitle}
               description={project.description}
-              backgroundImage={project.backgroundImage} // Pass background image
+              backgroundImage={project.backgroundImage} 
               progress={scrollYProgress}
               range={[i * 0.25, 1]}
               targetScale={targetScale}
@@ -122,13 +123,13 @@ const Card: React.FC<CardProps> = ({
     >
       <motion.div
         style={{
-          backgroundImage: `url(${backgroundImage})`, // Apply background image
+          backgroundImage: `url(${backgroundImage})`, 
           backgroundSize: "cover",
           backgroundPosition: "center",
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className="flex flex-col relative -top-[25%] h-[450px] w-[70%] rounded-md p-10 origin-top shadow-lg"
+        className="flex flex-col relative -top-[25%] h-[515px] w-[70%] rounded-md p-10 origin-top shadow-lg"
       >
         <div className="flex justify-center mb-4">
           <img
@@ -137,14 +138,20 @@ const Card: React.FC<CardProps> = ({
             className="w-48 h-48 object-cover rounded-full border-4 border-black dark:border-white"
           />
         </div>
-        <h2 className="text-2xl text-center font-semibold mb-2 text-black dark:text-white">{title}</h2>
-        <h3 className="text-lg text-center font-medium text-black dark:text-white mb-4">
+        <h2 className="text-2xl text-center font-semibold mb-2 text-black ">{title}</h2>
+        <h3 className="text-lg text-center font-medium text-black e mb-4">
           {subtitle}
         </h3>
-        <p className="text-sm text-center text-black dark:text-white">
+        <p className="text-sm text-center text-black mx-auto "
+        style={{
+          maxWidth: "80ch", 
+          wordWrap: "break-word", 
+          overflowWrap: "break-word",
+        }}>
           {description}
         </p>
       </motion.div>
+      <WhatsApp />
     </div>
   );
 };

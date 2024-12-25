@@ -1,11 +1,22 @@
+import { ServiceLayout } from "@/components/ServiceLayout";
+
 export function VideoEditingPage() {
-    return (
-      <div className="container mx-auto text-center py-24">
-        <h1 className="text-4xl font-bold mb-4">Video Editing</h1>
-        <p className="text-lg text-muted-foreground">
-          Placeholder content for Video Editing page.
-        </p>
-      </div>
-    );
-  }
-  
+  const workExamples = ["assets/video1.jpg", "assets/video2.jpg"];
+  const serviceContent = `
+    Professionally edited videos with seamless transitions, effects, and compelling storytelling to captivate your audience.
+  `;
+  return (
+    <ServiceLayout
+      title="Video Editing"
+      description="Create compelling videos with our professional editing services."
+      content={serviceContent}
+      images={["assets/video_cover1.jpg", "assets/video_cover2.jpg"]}
+    >
+      {workExamples.map((image, index) => (
+        <div key={index}>
+          <img src={image} alt={`Video Example ${index + 1}`} />
+        </div>
+      ))}
+    </ServiceLayout>
+  );
+}

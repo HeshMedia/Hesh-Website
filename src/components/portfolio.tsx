@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 const clients = [
-  { name: "Dr Yukti's Dental Studio", logo: "assets/dentalstudio_amritsar.jpg", link: "https://instagram.com/dentalstudio_amritsar" },
-  { name: "Dental Excellence Ludhiana", logo: "assets/dentalexcellence.ludhiana.jpg", link: "https://instagram.com/dentalexcellence.ludhiana" },
-  { name: "GD Goenka Toddler House", logo: "assets/gdgth.amr.jpg", link: "https://instagram.com/gdgth.amr" },
-  { name: "Kmaxx American Hospital", logo: "assets/kmaxxamericanhospital.jpg", link: "https://instagram.com/kmaxxamericanhospital" },
-  { name: "Kmaxx CDC", logo: "assets/kmaxx_cdc.jpg", link: "https://instagram.com/kmaxx_cdc" },
-  { name: "Dr Palika Dental", logo: "assets/drpalikadentalcarecentre.jpg", link: "https://instagram.com/drpalikadentalcarecentre" },
+  { name: "Dr Yukti's Dental Studio", logo: "assets/clients/dentalstudio_amritsar.jpg", link: "https://instagram.com/dentalstudio_amritsar" },
+  { name: "Dental Excellence Ludhiana", logo: "assets/clients/dentalexcellence.ludhiana.jpg", link: "https://instagram.com/dentalexcellence.ludhiana" },
+  { name: "GD Goenka Toddler House", logo: "assets/clients/gdgth.amr.jpg", link: "https://instagram.com/gdgth.amr" },
+  { name: "Kmaxx American Hospital", logo: "assets/clients/kmaxxamericanhospital.jpg", link: "https://instagram.com/kmaxxamericanhospital" },
+  { name: "Kmaxx CDC", logo: "assets/clients/kmaxx_cdc.jpg", link: "https://instagram.com/kmaxx_cdc" },
+  { name: "Dr Palika Dental", logo: "assets/clients/drpalikadentalcarecentre.jpg", link: "https://instagram.com/drpalikadentalcarecentre" },
 ];
 
 export function Portfolio() {
@@ -47,9 +47,12 @@ export function Portfolio() {
             </a>
           ))}
           <div className="col-span-2 md:col-span-3 lg:col-span-6 flex justify-center items-center">
-            <div className="text-lg font-bold text-gray-600 dark:text-gray-300">
+            <a
+              href="/clients"
+              className="text-lg font-bold text-gray-600 dark:text-gray-300 hover:text-[#58a6ff] dark:hover:text-[#58a6ff] underline transition"
+            >
               and many more...
-            </div>
+            </a>
           </div>
         </div>
       </div>

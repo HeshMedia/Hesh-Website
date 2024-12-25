@@ -1,11 +1,22 @@
+import { ServiceLayout } from "@/components/ServiceLayout";
+
 export function ConsultancyPage() {
-    return (
-      <div className="container mx-auto text-center py-24">
-        <h1 className="text-4xl font-bold mb-4">Consultancy</h1>
-        <p className="text-lg text-muted-foreground">
-          Placeholder content for Consultancy page.
-        </p>
-      </div>
-    );
-  }
-  
+  const workExamples = ["assets/consultancy1.jpg", "assets/consultancy2.jpg"];
+  const serviceContent = `
+    Leverage data-driven insights and competitor analysis for effective, actionable strategies.
+  `;
+  return (
+    <ServiceLayout
+      title="Consultancy"
+      description="Make informed decisions with our expert consultancy services."
+      content={serviceContent}
+      images={["assets/consultancy_cover1.jpg", "assets/consultancy_cover2.jpg"]}
+    >
+      {workExamples.map((image, index) => (
+        <div key={index}>
+          <img src={image} alt={`Consultancy Example ${index + 1}`} />
+        </div>
+      ))}
+    </ServiceLayout>
+  );
+}
