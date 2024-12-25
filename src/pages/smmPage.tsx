@@ -2,9 +2,9 @@ import { ServiceLayout } from "@/components/serviceLayout";
 
 export function SMMPage() {
   const workExamples = [
-    "/assets/office.jpg",
-    "assets/smm_2.jpg",
-    "assets/smm_3.jpg",
+    "/assets/k.jpg",
+    "assets/k.jpg",
+    "assets/k.jpg",
   ];
 
   const smmContent = `
@@ -19,7 +19,7 @@ export function SMMPage() {
       title="Social Media Management"
       description="Transform your social presence with professional, consistent branding and engaging posts."
       content={smmContent}
-      images={["/assets/office.jpg", "/assets/office2.jpg"]}
+      images={["/assets/k.jpg", "/assets/k.jpg"]}
     >
       {workExamples.map((image, index) => (
         <img
