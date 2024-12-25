@@ -1,4 +1,4 @@
-import { ServiceLayout } from "@/components/ServiceLayout";
+import { ServiceLayout } from "@/components/serviceLayout";
 
 export function SMMPage() {
   const workExamples = [

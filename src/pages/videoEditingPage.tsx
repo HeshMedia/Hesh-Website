@@ -1,4 +1,4 @@
-import { ServiceLayout } from "@/components/ServiceLayout";
+import { ServiceLayout } from "@/components/serviceLayout";
 
 export function VideoEditingPage() {
   const workExamples = ["assets/video1.jpg", "assets/video2.jpg"];

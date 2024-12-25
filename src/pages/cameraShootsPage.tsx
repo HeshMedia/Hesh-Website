@@ -1,4 +1,4 @@
-import { ServiceLayout } from "@/components/ServiceLayout";
+import { ServiceLayout } from "@/components/serviceLayout";
 
 export function CameraShootsPage() {
   const workExamples = ["assets/shoot1.jpg", "assets/shoot2.jpg"];

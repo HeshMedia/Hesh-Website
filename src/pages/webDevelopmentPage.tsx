@@ -1,4 +1,4 @@
-import { ServiceLayout } from "@/components/ServiceLayout";
+import { ServiceLayout } from "@/components/serviceLayout";
 
 export function WebDevelopmentPage() {
   const workExamples = ["assets/web1.jpg", "assets/web2.jpg"];

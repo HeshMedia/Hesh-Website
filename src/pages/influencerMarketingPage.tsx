@@ -1,4 +1,4 @@
-import { ServiceLayout } from "@/components/ServiceLayout";
+import { ServiceLayout } from "@/components/serviceLayout";
 
 export function InfluencerMarketingPage() {
   const workExamples = ["assets/influencer1.jpg", "assets/influencer2.jpg"];
