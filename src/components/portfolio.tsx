@@ -30,18 +30,20 @@ export function Portfolio() {
               rel="noopener noreferrer"
               className="block"
             >
-              <Card className="relative bg-card dark:bg-gray-800 hover:bg-card/80 dark:hover:bg-gray-700 transition duration-300 h-[240px] flex flex-col items-center justify-center group border-2 border-transparent hover:border-[#58a6ff]/50 shadow-md hover:shadow-lg">
-                <CardContent className="p-6 flex flex-col items-center justify-center">
-                  <div className="flex items-center justify-center w-20 h-20 mb-3">
+              <Card className="relative bg-card dark:bg-gray-800 hover:bg-card/80 dark:hover:bg-gray-700 transition duration-300 h-[240px] flex flex-col group border-2 border-transparent hover:border-[#58a6ff]/50 shadow-md hover:shadow-lg">
+                <CardContent className="p-8 flex flex-col justify-between items-center text-center h-full">
+                  <div className="flex items-center justify-center w-20 h-20 mb-4">
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="w-full h-full rounded-full object-cover"
+                      className="mt-14 w-full h-full rounded-full object-cover"
                     />
                   </div>
-                  <span className="text-foreground dark:text-white text-center">
+                  <div className="flex-grow flex items-center">
+                  <span className="text-foreground dark:text-white text-lg -mb-7">
                     {client.name}
                   </span>
+                  </div>
                 </CardContent>
               </Card>
             </a>
@@ -59,3 +61,4 @@ export function Portfolio() {
     </section>
   );
 }
+

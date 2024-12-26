@@ -19,7 +19,7 @@ const projects = [
     title: "Rachit Gupta",
     subtitle: "Co-Founder and CEO",
     description: "Rachit is at the helm of a digital agency that’s redefining how brands connect with the modern world. With a focus on innovation, strategy, and authentic storytelling, he’s driving change and helping businesses thrive in the fast-paced digital era.",
-    src: "assets/team/Rachit.png",
+    src: "assets/team/Rachit.jpg",
     backgroundImage:
       "assets/team/3.png", 
   },
@@ -49,7 +49,7 @@ const projects = [
   },
   {
     title: "Naman",
-    subtitle: "Editor",
+    subtitle: "Video Editor",
     description: "Naman, our skilled video editor, brings stories to life with his expert editing, turning raw footage into captivating visuals that engage and inspire audiences.",
     src: "assets/team/Naman.jpg",
     backgroundImage:

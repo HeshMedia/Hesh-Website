@@ -73,10 +73,10 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4 text-foreground dark:text-white">Connect</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
+              <a href="https://www.facebook.com/share/15kH8JHZMZ/?mibextid=wwXIfr" target="blank" className="text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
+              <a href="https://www.youtube.com/@heshmedia" target="blank" className="text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
                 <Youtube className="h-5 w-5" />
               </a>
               <a href="https://www.instagram.com/heshmedia.in" target="blank" className="text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">

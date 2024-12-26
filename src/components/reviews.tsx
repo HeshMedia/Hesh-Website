@@ -22,14 +22,30 @@ const reviews: Review[] = [
   {
     client: "Dr Savy Miglani",
     designation: "Dental Excellence Ludhiana",
-    review: "Always receiving high-quality content and timely delivery, even while working from a different city.",
+    review: "We started our journey them in June 2024. The experience has been really amazing, the team is hard working, compliant and innovative.",
   },
   {
     client: "Dr Gulneer Puri",
     designation: "Dietitian",
     review: "Great experience with managing my YouTube and Instagram, along with professional video editing and shoots.",
   },
+  {
+    client: "Dr Jaswinder Singh",
+    designation: "City Dental Clinic",
+    review: "Excellent Marketing agency! They consistently maintain my accounts with creative posts, reflecting great aesthetics and professionalism.",
+  },
+  {
+    client: "Dr Harinder Kaur",
+    designation: "Dhillon Dental Care",
+    review: "Fantastic team! They deliver quality content, consistently bring fresh ideas, and the benefit of being local ensures regular shoots.",
+  },
+  {
+    client: "Mr Shubham",
+    designation: "Teacher at Achievers",
+    review: "They post my students' results professionally and allow the flexibility to hire them seasonally as needed.",
+  },
 ];
+
 
 const options = {
   type: "loop",

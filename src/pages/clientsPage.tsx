@@ -1,22 +1,23 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Reviews } from "../components/reviews";
+import { Footer } from "../components/footer";
 
 const clients = [
   { name: "Dr Yukti's Dental Studio", logo: "assets/clients/dentalstudio_amritsar.jpg", link: "https://instagram.com/dentalstudio_amritsar" },
   { name: "Dental Excellence Ludhiana", logo: "assets/clients/dentalexcellence.ludhiana.jpg", link: "https://instagram.com/dentalexcellence.ludhiana" },
   { name: "GD Goenka Toddler House", logo: "assets/clients/gdgth.amr.jpg", link: "https://instagram.com/gdgth.amr" },
   { name: "Kmaxx American Hospital", logo: "assets/clients/kmaxxamericanhospital.jpg", link: "https://instagram.com/kmaxxamericanhospital" },
-  { name: "Kmaxx CDC", logo: "assets/clients/kmaxx_cdc.jpg", link: "https://instagram.com/kmaxx_cdc" },
-  { name: "Dr Palika Dental", logo: "assets/clients/drpalikadentalcarecentre.jpg", link: "https://instagram.com/drpalikadentalcarecentre" },
+  { name: "Kmaxx Child Development Center", logo: "assets/clients/kmaxx_cdc.jpg", link: "https://instagram.com/kmaxx_cdc" },
+  { name: "Dr Palika Dental Care Center", logo: "assets/clients/drpalikadentalcarecentre.jpg", link: "https://instagram.com/drpalikadentalcarecentre" },
   { name: "Dhillon Dental Studio", logo: "assets/clients/dhillondentalstudio.jpg", link: "https://www.instagram.com/dhillondentalstudio?igsh=MWRuMmg5NWl4azBmaw==" },
   { name: "City Dental Clinic Amritsar", logo: "assets/clients/citydentalclinicamritsar.jpg", link: "https://www.instagram.com/citydentalclinicamritsar?igsh=MTVocGs5bWNreTlpOA==" },
   { name: "Achievers Amritsar", logo: "assets/clients/achievers_amritsar.jpg", link: "https://www.instagram.com/achievers_amritsar?igsh=NGN4YXZ2d2N5aHRs" },
-  { name: "Dr. Gulneer Nutrition", logo: "assets/clients/dr_gulneer_nutrition.jpg", link: "https://www.instagram.com/dr_gulneer_nutrition?igsh=MXFoeHQ2NWx0cXRnaQ==" },
+  { name: "Dr Gulneer Nutrition", logo: "assets/clients/dr_gulneer_nutrition.jpg", link: "https://www.instagram.com/dr_gulneer_nutrition?igsh=MXFoeHQ2NWx0cXRnaQ==" },
   { name: "Compedia Learning", logo: "assets/clients/compedia_learning.jpg", link: "https://www.instagram.com/compedia_learning?igsh=MW9xeHpwYjZ2MzJybQ==" },
-  { name: "Dr. Gupta's Dental Hub", logo: "assets/clients/dr_guptas_dental_hub.jpg", link: "https://www.instagram.com/dr_guptas_dental_hub?igsh=MWZ0YzNlYzN3NjJhbg==" },
-  { name: "Dr. Mohindru", logo: "assets/clients/dr.mohindru.jpg", link: "https://www.instagram.com/dr.mohindru?igsh=MWx0M3NqMXo2OTh3NA==" },
-  { name: "Mankesh Gambhir", logo: "assets/clients/mankeshgambhir.jpg", link: "https://www.instagram.com/mankeshgambhir?igsh=cGZwaWZzOXRseXd6" },
-  { name: "Health and Nutrition", logo: "assets/clients/healthandnutrition27.jpg", link: "https://www.instagram.com/healthandnutrition27?igsh=eTFreDNjcWtjcmtq" },
+  { name: "Dr Hemant Gupta's Dental Hub", logo: "assets/clients/dr_guptas_dental_hub.jpg", link: "https://www.instagram.com/dr_guptas_dental_hub?igsh=MWZ0YzNlYzN3NjJhbg==" },
+  { name: "Dr Mohindru Medical & Dental Care", logo: "assets/clients/dr.mohindru.jpg", link: "https://www.instagram.com/dr.mohindru?igsh=MWx0M3NqMXo2OTh3NA==" },
+  { name: "Dr ML Gambhir", logo: "assets/clients/mankeshgambhir.jpg", link: "https://www.instagram.com/mankeshgambhir?igsh=cGZwaWZzOXRseXd6" },
+  { name: "Neelu Wellness Center", logo: "assets/clients/healthandnutrition27.jpg", link: "https://www.instagram.com/healthandnutrition27?igsh=eTFreDNjcWtjcmtq" },
   { name: "Tung Dental Clinic", logo: "assets/clients/tungdentalclinic.jpg", link: "https://www.instagram.com/tungdentalclinic?igsh=MXVubXppcGo3aXFlNA==" },
 ];
 
@@ -59,6 +60,7 @@ export function ClientsPage() {
       <div className="mt-14">
       <Reviews />
       </div>
+      <Footer />
     </section>
   );
 }
