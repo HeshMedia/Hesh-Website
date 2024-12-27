@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Rachit Gupta",
     subtitle: "Co-Founder and CEO",
-    description: "Rachit is at the helm of a digital agency that’s redefining how brands connect with the modern world. With a focus on innovation, strategy, and authentic storytelling, he’s driving change and helping businesses thrive in the fast-paced digital era.",
+    description: "Rachit, as the head of Hesh Media, embodies a growth-oriented mindset focused on delivering excellence. He leads the team with a goal to provide the best quality services, ensuring every project is handled with care and delivers great results.",
     src: "assets/team/Rachit.jpg",
     backgroundImage:
       "assets/team/3.png", 
@@ -35,14 +35,14 @@ const projects = [
     title: "Arushi Juneja",
     subtitle: "Creative Head",
     description: "Arushi merges innovative creativity with strategic insight to produce compelling content that accelerates brand growth and fosters deep audience engagement.",
-    src: "assets/team/Arushi.jpg",
+    src: "assets/team/Arushi.png",
     backgroundImage:
       "assets/team/1.png", 
   },
   {
     title: "Ashwath Soni",
     subtitle: "The Tech Guy",
-    description: "Ashwath, our tech expert, powers with innovative solutions and seamless digital experiences, keeping us ahead of the curve.",
+    description: "Ashwath, our tech expert, powers with innovative solutions and seamless digital experiences, keeping us ahead of the curve.He can create responsive modern websites with ease and specilaises in developing backend systems.",
     src: "assets/team/Ashwath.jpg",
     backgroundImage:
       "assets/team/5.png", 
@@ -66,13 +66,7 @@ export function TeamSection(): JSX.Element {
   });
 
   return (
-    <div ref={container} className="bg-background dark:bg-gray-900">
-      <section className="text-foreground h-[70vh] w-full bg-background dark:bg-gray-900 grid place-content-center">
-        <h1 className="2xl:text-7xl text-5xl px-8 font-semibold text-center tracking-tight leading-[120%] text-black dark:text-white">
-          Meet Our Team. Scroll down! 👇
-        </h1>
-      </section>
-
+    <div ref={container} className="mt- pt-4 bg-background dark:bg-gray-900">
       <section className="text-foreground w-full bg-background dark:bg-gray-900">
         {projects.map((project, i) => {
           const targetScale = 1 - (projects.length - i) * 0.05;

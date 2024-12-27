@@ -2,7 +2,7 @@ export function AboutHero() {
     return (
       <section
         id="team"
-        className="mt-18 py-24 bg-background dark:bg-gray-800 text-foreground dark:text-white"
+        className="mt-19 py-28 bg-background dark:bg-gray-800 text-foreground dark:text-white"
       >
         <div className="container mx-auto text-center">
           {/* Heading */}

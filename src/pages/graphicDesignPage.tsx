@@ -2,12 +2,12 @@ import { ServiceLayout } from "@/components/serviceLayout";
 
 export function GraphicDesignPage() {
   const workExamples = [
-    "/assets/services/gd/1.png",
+    "/assets/services/gd/6.png",
     "/assets/services/gd/2.png",
     "/assets/services/gd/3.png",
     "/assets/services/gd/4.png",
     "/assets/services/gd/5.png",
-    "/assets/services/gd/6.png",
+    "/assets/services/gd/1.png",
     "/assets/services/gd/7.png",
     "/assets/services/gd/8.png",
   ];

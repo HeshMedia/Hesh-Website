@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Reviews } from "../components/reviews";
 import { Footer } from "../components/footer";
+import { ServiceNavbar } from "../components/serviceNavbar";
+import { WhatsApp } from "../components/whatsapp";
 
 const clients = [
   { name: "Dr Yukti's Dental Studio", logo: "assets/clients/dentalstudio_amritsar.jpg", link: "https://instagram.com/dentalstudio_amritsar" },
@@ -24,6 +26,7 @@ const clients = [
 export function ClientsPage() {
   return (
     <section className="py-24 bg-background dark:bg-gray-900">
+      <ServiceNavbar/>
       <div className="container px-6 md:px-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-foreground dark:text-white">
@@ -60,6 +63,7 @@ export function ClientsPage() {
       <div className="mt-14">
       <Reviews />
       </div>
+      <WhatsApp/>
       <Footer />
     </section>
   );
