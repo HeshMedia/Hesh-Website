@@ -49,23 +49,23 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-foreground dark:text-white">Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
+                <a href="services/smm" className="text-sm text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
                   Social Media Management
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
-                  Content Creation
+                <a href="services/graphic-design" className="text-sm text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
+                  Grpahic Designing
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
-                  Influencer Partnerships
+                <a href="services/video-editing" className="text-sm text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
+                  Video Editing
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
-                  Analytics & Reporting
+                <a href="services/web-development" className="text-sm text-muted-foreground dark:text-gray-400 hover:text-primary dark:hover:text-blue-400">
+                  Web Development
                 </a>
               </li>
             </ul>
