@@ -17,7 +17,7 @@ const reviews: Review[] = [
   {
     client: "Ms. Chitvan Kochar",
     designation: "Principal, GD Goenka",
-    review: "Consistently delivering high-quality content, professional shoots, expert editing, and stunning graphics for GD Goenka Toddler House.",
+    review: "An Amazing team to bring my vision to reality. No matter how absurd my ideas sound they make sure they bring it to life with their creative touch.",
   },
   {
     client: "Dr Savy Miglani",

@@ -43,7 +43,7 @@ export function About() {
           <div className="relative">
             <div className="relative h-[400px] w-full rounded-2xl overflow-hidden group">
               <img
-                src="assets/office.jpg"
+                src="https://imgur.com/yrVWA8e.png"
                 alt="Office"
                 className="w-full h-full object-cover rounded-2xl border-4 border-gray-300 dark:border-gray-700"
               />
