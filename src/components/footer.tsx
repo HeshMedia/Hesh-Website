@@ -5,7 +5,7 @@ export function Footer() {
   const { theme } = useTheme(); // Access the current theme (light or dark)
 
   return (
-    <footer className="bg-background py-5 dark:bg-gray-900 border-t border-border dark:border-gray-700">
+    <footer className="bg-background py-5 dark:bg-gray-900 border-t border-border dark:border-gray-700 px-3">
       <div className="container px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
           <div>

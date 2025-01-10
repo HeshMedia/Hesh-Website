@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { OptimizedImage } from "./optimizedImage"; // Import the Cloudinary component
+import { Resize } from "@cloudinary/url-gen/actions";
 
 interface GalleryItem {
   id: number;
-  url: string;
+  url: string; // Cloudinary public ID
   title: string;
   description: string;
 }
 
 const galleryItems: GalleryItem[] = [
-  { id: 1, url: "/assets/office.jpg", title: "Office Space", description: "A view of our office space." },
-  { id: 2, url: "/assets/office2.jpg", title: "Team Meeting", description: "Our team collaborating on new ideas." },
-  { id: 3, url: "/assets/office3.jpg", title: "Event", description: "Celebrating milestones together." },
+  { id: 1, url: "qqaiy3pli16tuhb3u01b", title: "Office Space", description: "A view of our office space." },
+  { id: 2, url: "Gallery/fkxgigkqehssgjjxzepi", title: "Team Meeting", description: "Our team collaborating on new ideas." },
+  { id: 3, url: "Gallery/lmcqxbyihgjgr3pfaem9", title: "Event", description: "Celebrating milestones together." },
 ];
 
 export function GallerySection() {
@@ -46,22 +48,32 @@ export function GallerySection() {
         <div className="flex justify-center items-center">
           <div className="rounded-md w-fit mx-auto md:gap-2 gap-1 flex pb-20 pt-10">
             {galleryItems.map((item, i) => (
-              <motion.img
+              <motion.div
                 key={item.id}
-                src={item.url}
-                className={`rounded-2xl ${
+                className={`${
                   index === i
-                    ? "w-[250px] "
-                    : "xl:w-[50px] md:w-[30px] sm:w-[20px] w-[14px]"
-                } h-[200px] flex-shrink-0 object-cover transition-[width] ease-in-out duration-300`}
-                whileTap={{ scale: 0.95 }}
+                    ? "w-[250px] xl:h-[200px] md:h-[180px] sm:h-[160px] h-[140px] rounded-lg"
+                    : "xl:w-[50px] md:w-[30px] sm:w-[20px] w-[14px] xl:h-[200px] md:h-[180px] sm:h-[160px] h-[140px] rounded-full"
+                } flex-shrink-0 transition-[width] ease-in-out duration-500 overflow-hidden`}
                 onMouseEnter={() => setIndex(i)}
-                onMouseLeave={() => setIndex(i)}
                 onClick={() => {
                   setIndex(i);
                   setOpen(true);
                 }}
-              />
+              >
+                <OptimizedImage
+                  publicId={item.url}
+                  alt={item.title}
+                  transformations={(image) =>
+                    image.resize(
+                      Resize.fill().width(index === i ? 250 : 50).height(200)
+                    )
+                  }
+                  className={`h-full w-full object-cover ${
+                    index === i ? "rounded-lg" : "rounded-full"
+                  }`}
+                />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -79,10 +91,13 @@ export function GallerySection() {
                   layoutId={galleryItems[index].id.toString()}
                   className="w-[400px] h-[400px] rounded-2xl cursor-default"
                 >
-                  <img
-                    src={galleryItems[index].url}
+                  <OptimizedImage
+                    publicId={galleryItems[index].url}
                     alt="Gallery Item"
-                    className="rounded-2xl h-full w-full object-cover"
+                    transformations={(image) =>
+                      image.resize(Resize.fill().width(400).height(400))
+                    }
+                    className="rounded-lg h-full w-full object-cover"
                   />
                   <article className="dark:bg-gray-800 bg-white rounded-md p-2 mt-2 border">
                     <motion.h1

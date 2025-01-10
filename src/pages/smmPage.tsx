@@ -18,7 +18,7 @@ export function SMMPage() {
       description="Transform your social presence with professional, consistent branding and engaging posts."
       content={smmContent}
       images={["/assets/services/smm/smm1.png", "/assets/services/smm/smm2.png"]}
-      aspectRatio="9/16" // Apply Instagram reel ratio
+      aspectRatio="9/16" 
       hideWorkSection = {false}
     >
       {workExamples.map((image, index) => (

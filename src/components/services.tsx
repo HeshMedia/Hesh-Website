@@ -69,7 +69,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative py-20 bg-background dark:bg-gray-900 overflow-hidden"
+      className="relative py-20 bg-background dark:bg-gray-900 overflow-hidden px-10"
     >
       <div className="container relative z-10 px-4">
         {/* Heading Section */}

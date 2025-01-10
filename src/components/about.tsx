@@ -1,19 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { OptimizedImage } from "@/components/optimizedImage"; // Import your Cloudinary component
 
 export function About() {
   const navigate = useNavigate();
 
   const handleNavigateToAbout = () => {
     navigate("/about");
-    // Scroll to the top of the page after navigation
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, 0);
   };
 
   return (
-    <section id="about" className="py-24 pt-44 bg-background dark:bg-gray-900">
+    <section id="about" className="py-24 pt-44 bg-background dark:bg-gray-900 px-10">
       <div className="container px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -42,10 +42,9 @@ export function About() {
           </div>
           <div className="relative">
             <div className="relative h-[400px] w-full rounded-2xl overflow-hidden group">
-              <img
-                src="https://imgur.com/yrVWA8e.png"
+              <OptimizedImage
+                publicId="qqaiy3pli16tuhb3u01b"
                 alt="Office"
-                className="w-full h-full object-cover rounded-2xl border-4 border-gray-300 dark:border-gray-700"
               />
               <div className="absolute inset-0 rounded-2xl border-4 border-transparent group-hover:border-[#58a6ff]/50 transition-all duration-300"></div>
             </div>
