@@ -4,10 +4,10 @@ import { cloudinary } from "../config/cloudinary";
 import { CloudinaryImage } from "@cloudinary/url-gen";
 
 interface OptimizedImageProps {
-  publicId: string; // The Cloudinary public ID of the image
-  alt: string; // Alt text for the image
-  transformations?: (image: CloudinaryImage) => CloudinaryImage; // Optional transformations
-  className?: string; // Optional className for styling
+  publicId: string; 
+  alt: string; 
+  transformations?: (image: CloudinaryImage) => CloudinaryImage; 
+  className?: string;
 }
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -17,7 +17,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 }) => {
   const image = cloudinary.image(publicId);
 
-  // Apply transformations if provided
   if (transformations) {
     transformations(image);
   }

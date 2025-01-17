@@ -1,21 +1,23 @@
 import { ServiceLayout } from "@/components/serviceLayout";
+import { Resize } from "@cloudinary/url-gen/actions"; // Cloudinary Resize actions
+import { cloudinary } from "../config/cloudinary"; // Cloudinary config to generate URLs
 
 export function WebDevelopmentPage() {
   const workExamples = [
     {
-      image: "/assets/services/web/1.png",
+      image: "Services/web/kgmpk3i7xyydfvptsm98.png", 
       link: "https://dentalexcellenceludhiana.graphionicinfotech.com/",
     },
     {
-      image: "/assets/services/web/2.png",
+      image: "Services/web/olklraxot0qy8rflfxqa.png", 
       link: "https://daysinnsalina.com/",
     },
     {
-      image: "/assets/services/web/3.png",
+      image: "Services/web/mrxlmjoxifxo9v7pujzv.png",  
       link: "https://trevixgloble.com/",
     },
     {
-      image: "/assets/services/web/4.png",
+      image: "Services/web/lnetcaboqrro5kkcwkxs.png",  
       link: "https://relaxservices.in/",
     },
   ];
@@ -29,8 +31,11 @@ export function WebDevelopmentPage() {
       title="Web Development"
       description="Build high-quality websites with our expert web development services."
       content={serviceContent}
-      images={["/assets/services/web/web1.png", "/assets/services/web/web2.jpg"]}
-      hideWorkSection = {false}
+      images={[
+        "Services/web/uhazr445raenvzecuujk.png", // Cloudinary public ID for the first image
+        "Services/web/ncp3aqkb7qzyv293swte.png", // Cloudinary public ID for the second image
+      ]}
+      hideWorkSection={false}
     >
       {workExamples.map((work, index) => (
         <a
@@ -41,7 +46,8 @@ export function WebDevelopmentPage() {
           className="block"
         >
           <img
-            src={work.image}
+            // Use Cloudinary to generate the image URL
+            src={cloudinary.image(work.image).resize(Resize.fill().width(820).height(520)).toURL()} // Resize and transform
             alt={`Web Example ${index + 1}`}
             className="rounded-md transition-transform duration-300 cursor-pointer hover:scale-105"
           />

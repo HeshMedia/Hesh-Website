@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { OptimizedImage } from "./optimizedImage"; // Import the Cloudinary component
+import { cloudinary } from "../config/cloudinary";  // Import Cloudinary configuration
 import { Resize } from "@cloudinary/url-gen/actions";
 
 interface GalleryItem {
   id: number;
-  url: string; // Cloudinary public ID
+  url: string;
   title: string;
   description: string;
 }
@@ -48,32 +48,22 @@ export function GallerySection() {
         <div className="flex justify-center items-center">
           <div className="rounded-md w-fit mx-auto md:gap-2 gap-1 flex pb-20 pt-10">
             {galleryItems.map((item, i) => (
-              <motion.div
+              <motion.img
                 key={item.id}
-                className={`${
+                src={cloudinary.image(item.url).resize(Resize.fill().width(250).height(200)).toURL()}  // Cloudinary image link
+                className={`rounded-2xl ${
                   index === i
-                    ? "w-[250px] xl:h-[200px] md:h-[180px] sm:h-[160px] h-[140px] rounded-lg"
-                    : "xl:w-[50px] md:w-[30px] sm:w-[20px] w-[14px] xl:h-[200px] md:h-[180px] sm:h-[160px] h-[140px] rounded-full"
-                } flex-shrink-0 transition-[width] ease-in-out duration-500 overflow-hidden`}
+                    ? "w-[250px] "
+                    : "xl:w-[50px] md:w-[30px] sm:w-[20px] w-[14px]"
+                } h-[200px] flex-shrink-0 object-cover transition-[width] ease-in-out duration-300`}
+                whileTap={{ scale: 0.95 }}
                 onMouseEnter={() => setIndex(i)}
+                onMouseLeave={() => setIndex(i)}
                 onClick={() => {
                   setIndex(i);
                   setOpen(true);
                 }}
-              >
-                <OptimizedImage
-                  publicId={item.url}
-                  alt={item.title}
-                  transformations={(image) =>
-                    image.resize(
-                      Resize.fill().width(index === i ? 250 : 50).height(200)
-                    )
-                  }
-                  className={`h-full w-full object-cover ${
-                    index === i ? "rounded-lg" : "rounded-full"
-                  }`}
-                />
-              </motion.div>
+              />
             ))}
           </div>
         </div>
@@ -91,13 +81,10 @@ export function GallerySection() {
                   layoutId={galleryItems[index].id.toString()}
                   className="w-[400px] h-[400px] rounded-2xl cursor-default"
                 >
-                  <OptimizedImage
-                    publicId={galleryItems[index].url}
+                  <img
+                    src={cloudinary.image(galleryItems[index].url).toURL()}  // Enlarged image using Cloudinary URL
                     alt="Gallery Item"
-                    transformations={(image) =>
-                      image.resize(Resize.fill().width(400).height(400))
-                    }
-                    className="rounded-lg h-full w-full object-cover"
+                    className="rounded-2xl h-full w-full object-cover"
                   />
                   <article className="dark:bg-gray-800 bg-white rounded-md p-2 mt-2 border">
                     <motion.h1
