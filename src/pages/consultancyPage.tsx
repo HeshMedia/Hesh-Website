@@ -19,7 +19,7 @@ export function ConsultancyPage() {
       {/* Display the two images here */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {["Services/consul/kyhgetcweeypu1t2ihre.png", "Services/consul/rrcpbuveccirkef0gdca.png"].map((image, index) => (
-          <OptimizedImage
+          <OptimizedImage              
             key={index}
             publicId={image} // Cloudinary public ID
             alt={`Consultancy Example ${index + 1}`}
