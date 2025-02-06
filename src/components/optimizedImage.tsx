@@ -14,12 +14,13 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   publicId,
   alt,
   transformations,
+  className,
 }) => {
-  const image = cloudinary.image(publicId);
+  let cldImg = cloudinary.image(publicId);
 
   if (transformations) {
-    transformations(image);
+    cldImg = transformations(cldImg);
   }
 
-  return <AdvancedImage cldImg={image} alt={alt} />;
+  return <AdvancedImage cldImg={cldImg} alt={alt} className={className} />;
 };

@@ -1,26 +1,5 @@
-import React, { useRef } from "react";
-import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
 import { WhatsApp } from "./whatsapp";
-import { useIsMobile } from "../hooks/useIsMobile"; 
-import { OptimizedImage } from "./optimizedImage";
-import { cloudinary } from "../config/cloudinary";
-import { Resize } from "@cloudinary/url-gen/actions";
-import { Gravity } from "@cloudinary/url-gen/qualifiers";
-import { RoundCorners } from "@cloudinary/url-gen/actions";
-import { FocusOn } from "@cloudinary/url-gen/qualifiers/focusOn";
-
-interface CardProps {
-  i: number;
-  title: string;
-  subtitle: string;
-  description: string;
-  src: string;
-  backgroundImage: string; // Added backgroundImage field
-  mobileBackgroundImage: string;
-  progress: MotionValue<number>;
-  range: [number, number];
-  targetScale: number;
-}
+import { TeamCard } from "./ui/teamCard";
 
 const projects = [
   {
@@ -67,109 +46,34 @@ const projects = [
 
 
 export function TeamSection(): JSX.Element {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  });
+  const firstRow = projects.slice(0, 2);
+  const secondRow = projects.slice(2);
 
   return (
-    <div ref={container} className="pt-4 bg-background dark:bg-gray-900">
-      <section className="text-foreground w-full bg-background dark:bg-gray-900">
-        {projects.map((project, i) => {
-          const targetScale = 1 - (projects.length - i) * 0.05;
-          return (
-            <Card
-              key={`p_${i}`}
-              i={i}
-              src={project.src}
-              title={project.title}
-              subtitle={project.subtitle}
-              description={project.description}
-              backgroundImage={project.backgroundImage} 
-              mobileBackgroundImage={project.mobileBackgroundImage}
-              progress={scrollYProgress}
-              range={[i * 0.25, 1]}
-              targetScale={targetScale}
+    <section className="py-16 bg-background dark:bg-gray-900 px-4">
+      <div className="container mx-auto">
+        {/* First Row - Large Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {firstRow.map((member) => (
+            <TeamCard
+              key={member.title}
+              {...member}
+              isLarge={true}
             />
-          );
-        })}
-      </section>
-    </div>
+          ))}
+        </div>
+
+        {/* Second Row - Smaller Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {secondRow.map((member) => (
+            <TeamCard
+              key={member.title}
+              {...member}
+            />
+          ))}
+        </div>
+      </div>
+      <WhatsApp />
+    </section>
   );
 }
-
-const Card: React.FC<CardProps> = ({
-  i,
-  title,
-  subtitle,
-  description,
-  src,
-  backgroundImage,
-  progress,
-  range,
-  targetScale,
-  mobileBackgroundImage,
-}) => {
-  const container = useRef(null);
-  const scale = useTransform(progress, range, [1, targetScale]);
-
-  const isMobile = useIsMobile();
-  const bgImage = isMobile ? mobileBackgroundImage : backgroundImage;
-
-  const bgImageUrl = cloudinary
-    .image(bgImage)
-    .resize(Resize.fill().width(800).height(600))
-    .toURL();
-
-  return (
-    <div
-      ref={container}
-      className="h-screen flex items-center justify-center sticky top-0"
-    >
-      <motion.div
-        style={{
-          backgroundImage: `url(${bgImageUrl})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          scale,
-          top: `calc(-5vh + ${i * 25}px)`,
-        }}
-        className="flex flex-col relative -top-[25%] h-[530px] w-[70%] rounded-md p-10 origin-top shadow-lg"
-      >
-        <div className="flex justify-center mb-4">
-        <OptimizedImage
-          publicId={src}
-          alt={`${title}'s Profile Picture`}
-          transformations={(image) =>
-            image
-              .resize(
-                Resize.fill().width(192).height(192).gravity(Gravity.focusOn(FocusOn.face()))
-              )
-              .roundCorners(RoundCorners.max())
-          }
-          className="rounded-full border-4 border-black dark:border-white"
-        />
-          </div>
-        <h2 className="text-2xl text-center font-semibold mb-2 text-black">
-          {title}
-        </h2>
-        <h3 className="text-lg text-center font-medium text-black mb-4">
-          {subtitle}
-        </h3>
-        <p
-          className="text-sm text-center text-black mx-auto"
-          style={{
-            maxWidth: "80ch",
-            wordWrap: "break-word",
-            overflowWrap: "break-word",
-          }}
-        >
-          {description}
-        </p>
-      </motion.div>
-      <WhatsApp />
-    </div>
-  );
-};
-
