@@ -43,7 +43,7 @@ export function About() {
           <div className="relative">
             <div className="relative h-[400px] w-full rounded-2xl overflow-hidden group">
               <OptimizedImage
-                publicId="qqaiy3pli16tuhb3u01b"
+                publicId="Gallery/e4pmkm398fwenuajhnrv"
                 alt="Office"
               />
               <div className="absolute inset-0 rounded-2xl border-4 border-transparent group-hover:border-[#58a6ff]/50 transition-all duration-300"></div>

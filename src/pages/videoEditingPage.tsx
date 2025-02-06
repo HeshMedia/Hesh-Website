@@ -25,7 +25,10 @@ export function VideoEditingPage() {
       title="Video Editing"
       description="Create compelling videos with our professional editing services."
       content={serviceContent}
-      images={["Services/ve/dc1zo3bfkk2q6stgwpln.png", "Services/ve/yudhdjaqaqlk2rhm8vhk.png"]} // Cloudinary for images only
+      images={[
+        "Services/ve/dc1zo3bfkk2q6stgwpln.png",
+        "Services/ve/yudhdjaqaqlk2rhm8vhk.png",
+      ]} // Cloudinary for images only
       aspectRatio={videoAspectRatio} // Pass the aspect ratio to ServiceLayout
       hideWorkSection={false}
     >
@@ -42,6 +45,9 @@ export function VideoEditingPage() {
             autoPlay
             loop
             playsInline
+            preload="metadata" // Helps iOS preload
+            onCanPlay={() => console.log("Video can play")}
+            onError={(e) => console.error("Video error:", e)}
             className="w-full h-full object-cover rounded-md"
           />
         </div>

@@ -11,7 +11,7 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
-  { id: 1, url: "qqaiy3pli16tuhb3u01b", title: "Office Space", description: "A view of our office space." },
+  { id: 1, url: "Gallery/e4pmkm398fwenuajhnrv", title: "Office Space", description: "A view of our office space." },
   { id: 2, url: "Gallery/fkxgigkqehssgjjxzepi", title: "Team Meeting", description: "Our team collaborating on new ideas." },
   { id: 3, url: "Gallery/lmcqxbyihgjgr3pfaem9", title: "Event", description: "Celebrating milestones together." },
 ];

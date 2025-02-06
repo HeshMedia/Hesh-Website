@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ServiceNavbar } from "@/components/serviceNavbar";
 import { Footer } from "@/components/footer";
 import { WhatsApp } from "./whatsapp";
@@ -26,6 +26,18 @@ export function ServiceLayout({
     window.scrollTo(0, 0);
   }, []);
 
+  // Fix hydration issue by computing aspect ratio only on the client
+  const [computedAspect, setComputedAspect] = useState("aspect-[16/9]");
+  useEffect(() => {
+    setComputedAspect(
+      aspectRatio === "9/16"
+        ? "aspect-[9/16]"
+        : aspectRatio === "1/1"
+        ? "aspect-[1/1]"
+        : "aspect-[16/9]"
+    );
+  }, [aspectRatio]);
+
   return (
     <div className="bg-background dark:bg-gray-900 text-foreground dark:text-white min-h-screen">
       <ServiceNavbar />
@@ -44,12 +56,10 @@ export function ServiceLayout({
           </div>
           <div className="grid grid-cols-2 gap-2">
             {images.slice(0, 2).map((image, index) => (
-              <div
-                key={index}
-                className="w-[300px] h-[150px] overflow-hidden"
-              >
+              <div key={index} className="w-[300px] h-[150px] overflow-hidden">
                 <img
-                  src={cloudinary.image(image).resize(Resize.fill().width(300).height(150)).toURL()}
+                  src={cloudinary.image(image).resize(Resize.fill().width(300).height(150)).format("auto").toURL()}
+                  onError={(e) => console.error("Image failed to load:", e)}
                   alt={`Image ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-300 cursor-pointer hover:scale-105 rounded-lg"
                 />
@@ -66,20 +76,18 @@ export function ServiceLayout({
               {children &&
                 React.Children.map(children, (child, index) => {
                   if (React.isValidElement(child)) {
-                    const aspectStyle = aspectRatio === "9/16" ? `aspect-[9/16]` : aspectRatio === "1/1" ? `aspect-[1/1]` : "aspect-[16/9]";
-
                     return (
                       <div
                         key={index}
-                        className={`p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-md transition-all hover:scale-105 hover:border-4 hover:border-[#3975FA] cursor-pointer ${aspectStyle}`}
+                        className={`p-4 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-md transition-all hover:scale-105 hover:border-4 hover:border-[#3975FA] cursor-pointer ${computedAspect}`}
                       >
                         {React.cloneElement(child as React.ReactElement, {
-                          className: `w-full h-full object-cover rounded-md ${aspectStyle}`,
+                          className: `w-full h-full object-cover rounded-md`,
                         })}
                       </div>
                     );
                   }
-                  return null; 
+                  return null;
                 })}
             </div>
           </section>
