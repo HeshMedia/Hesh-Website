@@ -11,7 +11,7 @@ const clients = [
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 bg-background dark:bg-gray-900">
+    <section id="portfolio" className=" bg-background dark:bg-gray-900">
       <div className="container px-6 md:px-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-foreground dark:text-white">

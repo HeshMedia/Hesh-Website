@@ -19,19 +19,19 @@ export function SMMPage() {
       title="Social Media Management"
       description="Transform your social presence with professional, consistent branding and engaging posts."
       content={smmContent}
-      images={["Services/smm/ycnilafvrie6m1budf7a", "Services/smm/sfugcdygyill3f9xhjor"]}  
-      aspectRatio="9/16"  // Aspect ratio for Our Work section
+      images={["Services/smm/ycnilafvrie6m1budf7a", "Services/smm/sfugcdygyill3f9xhjor"]}
+      aspectRatio="9/16" // Aspect ratio for Our Work section
       hideWorkSection={false}
     >
       {workExamples.map((image, index) => (
         <OptimizedImage
           key={index}
-          publicId={image}  // Cloudinary public ID for work example images
+          publicId={image} // Cloudinary public ID for work example images
           alt={`Work Example ${index + 1}`}
           transformations={(image) =>
-            image.resize(Resize.fill().width(380).height(980)) // 9:16 aspect ratio
+            image.resize(Resize.fit().width(380).height(980)) // Fit within box without cropping
           }
-          className="rounded-md" // Maintain rounded corners
+          className="rounded-md object-contain w-full h-auto" // Ensure full image is visible
         />
       ))}
     </ServiceLayout>

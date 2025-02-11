@@ -3,7 +3,7 @@ import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
 import { Services } from "@/components/services"
 import { Portfolio } from "@/components/portfolio"
-import { Contact } from "@/components/contact"
+import {Contact}  from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { Reviews } from "../components/reviews"
 import { WhatsApp } from '@/components/whatsapp';

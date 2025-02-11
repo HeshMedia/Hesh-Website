@@ -1,5 +1,5 @@
 import { AboutNavbar } from "@/components/aboutNavbar";
-import { AboutHero } from "@/components/aboutHero";
+
 import { TeamSection } from "@/components/teamSection";
 import { ValuesSection } from "@/components/valuesSection";
 import { GallerySection } from "@/components/gallerySection";
@@ -11,7 +11,7 @@ export function AboutPage() {
     <>
       <AboutNavbar />
       <main>
-        <AboutHero />
+        
         <TeamSection />
         <ValuesSection />
         <GallerySection />
