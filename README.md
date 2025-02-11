@@ -1,3 +1,3 @@
 # Contributors:
-[@ashboi005](github.com/ashboi005)
-[@sahilchabra09](github.com/sahilchabra09)
+[@ashboi005](https://github.com/ashboi005)
+[@sahilchabra09](https://github.com/sahilchabra09)
