@@ -146,3 +146,12 @@ html {
     max-width: 90%; /* Slightly tighter layout for ultra-wide screens */
   }
 }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

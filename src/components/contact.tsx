@@ -18,151 +18,59 @@ export function Contact() {
       setIsSending(true);
       emailjs
         .sendForm(
-          "service_sjs77dm", // Replace with your EmailJS service ID
-          "template_5l027gl", // Replace with your EmailJS template ID
+          "service_sjs77dm",
+          "template_5l027gl",
           form.current,
-          "SV2waACebIn3Nbyi4" // Replace with your EmailJS public key
+          "SV2waACebIn3Nbyi4"
         )
         .then(
-          (result) => {
-            console.log(result.text);
-            toast({
-              title: "Message sent!",
-              description: "We'll get back to you as soon as possible.",
-              variant: "default",
-            });
+          () => {
+            toast({ title: "Message sent!", description: "We'll get back to you soon.", variant: "default" });
             form.current?.reset();
           },
-          (error) => {
-            console.log(error.text);
-            toast({
-              title: "Error",
-              description: "Something went wrong. Please try again later.",
-              variant: "destructive",
-            });
+          () => {
+            toast({ title: "Error", description: "Something went wrong. Try again later.", variant: "destructive" });
           }
         )
-        .finally(() => {
-          setIsSending(false);
-        });
+        .finally(() => setIsSending(false));
     }
   };
 
   return (
-    <section
-      id="contact"
-      className="bg-background dark:bg-gray-900 flex items-center justify-center  py-16"
-    >
-      <div className="container mx-auto px-4">
-        {/* Container for the two equally sized sections */}
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-8">
-            {/* Left Section: Contact Form */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex-1 p-6"
-            >
-              <div className="h-full flex flex-col justify-center">
-                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Input
-                      name="from_name"
-                      placeholder="Your Name"
-                      required
-                      className="w-full bg-background dark:bg-gray-800 text-foreground dark:text-white border-primary/20 dark:border-primary/40"
-                    />
+    <section id="contact" className="bg-background dark:bg-gray-900  py-16 flex items-center justify-center px-10">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
+          {/* Right Section: Contact Info */}
+          <motion.div whileHover={{ scale: 1.02 }} className="w-full md:w-1/2  p-8  text-center md:text-left">
+            <h2 className="text-3xl font-bold text-gray-800">Contact Us</h2>
+            <p className="text-gray-500 mt-3">We’d love to hear from you. Reach out to us anytime!</p>
+            <div className="mt-6 space-y-6">
+              {[
+                { Icon: Phone, text: "+91 83602 55087" },
+                { Icon: Mail, text: "heshmedia21@gmail.com" },
+                { Icon: MapPin, text: "Prem Complex, Circular Rd, Medical Enclave, Amritsar, Punjab 143001" }
+              ].map(({ Icon, text }, index) => (
+                <motion.div key={index} whileHover={{ x: 5 }} className="flex items-center gap-4 text-center md:text-left">
+                  <div className="h-12 w-12 min-w-[3rem] min-h-[3rem] flex items-center justify-center rounded-full bg-blue-600 shadow-md">
+                    <Icon className="h-6 w-6 text-white" />
                   </div>
-                  <div>
-                    <Input
-                      name="reply_to"
-                      type="email"
-                      placeholder="Your Email"
-                      required
-                      className="w-full bg-background dark:bg-gray-800 text-foreground dark:text-white border-primary/20 dark:border-primary/40"
-                    />
-                  </div>
-                  <div>
-                    <Textarea
-                      name="message"
-                      placeholder="Your Message"
-                      required
-                      className="w-full min-h-[150px] bg-background dark:bg-gray-800 text-foreground dark:text-white border-primary/20 dark:border-primary/40"
-                    />
-                  </div>
-                  <div className="flex justify-center">
-                    <Button
-                      type="submit"
-                      disabled={isSending}
-                      className={`w-full md:w-auto bg-primary hover:bg-primary/90 dark:bg-blue-600 text-primary-foreground ${
-                        isSending ? "opacity-50 cursor-not-allowed" : ""
-                      }`}
-                    >
-                      {isSending ? "Sending..." : "Send Message"}
-                    </Button>
-                  </div>
-                </form>
-              </div>
-            </motion.div>
+                  <span className="text-lg text-gray-700 break-words max-w-[200px] md:max-w-full">{text}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-            {/* Right Section: Contact Information */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex-1 p-6"
-            >
-              <div className="h-full flex flex-col justify-center">
-                <div className="mb-8 text-center">
-                  <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-foreground dark:text-white">
-                    Contact Us
-                  </h2>
-                  <p className="text-lg text-muted-foreground dark:text-gray-400 mt-4">
-                    You can contact us for any queries or feedback.
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  <motion.div
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 200 }}
-                    className="flex items-center gap-4"
-                  >
-                    <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
-                      <Phone className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="text-base text-foreground dark:text-white">
-                      +91 83602 55087
-                    </span>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 200 }}
-                    className="flex items-center gap-4"
-                  >
-                    <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
-                      <Mail className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="text-base text-foreground dark:text-white">
-                      heshmedia21@gmail.com
-                    </span>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 200 }}
-                    className="flex items-center gap-4"
-                  >
-                    <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
-                      <MapPin className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="text-base text-foreground dark:text-white">
-                      Prem Complex, Circular Rd, Medical Enclave, Amritsar,
-                      Punjab 143001
-                    </span>
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          {/* Left Section: Contact Form */}
+          <motion.div whileHover={{ scale: 1.02 }} className="w-full md:w-1/2 p-8">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+              <Input name="from_name" placeholder="Your Name" required className="w-full border-gray-300" />
+              <Input name="reply_to" type="email" placeholder="Your Email" required className="w-full border-gray-300" />
+              <Textarea name="message" placeholder="Your Message" required className="w-full border-gray-300" />
+              <Button type="submit" disabled={isSending} className={`w-full bg-blue-600 text-white py-3 rounded-xl font-semibold shadow-md ${isSending ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"}`}>
+                {isSending ? "Sending..." : "Send Message"}
+              </Button>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>

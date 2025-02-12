@@ -40,20 +40,13 @@ export const TeamCard: React.FC<TeamCardProps> = ({
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 
       {/* Content container */}
-      <div className="absolute bottom-0 left-0 right-0 p-4">
-        <div className="text-white">
-          <h3 className="text-2xl font-bold">{title}</h3>
-          <p className="text-md">{subtitle}</p>
-        </div>
-        {/* Description appears on hover */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileHover={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="mt-2 text-white text-sm"
-        >
-          {description}
-        </motion.div>
+      <div className="absolute bottom-0 left-0 right-0 p-4 text-white transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+        <h3 className="text-2xl font-bold">{title}</h3>
+        <p className="text-md">{subtitle}</p>
+
+        {/* Description is now always revealed on hover */}
+        <p className="mt-2 text-sm">{description}</p>
+
         {/* Founder badge for highlighted team members */}
         {isHighlighted && (
           <div className="mt-2 inline-block bg-yellow-500 text-black px-2 py-1 text-xs font-bold rounded">

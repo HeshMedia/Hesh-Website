@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { OptimizedImage } from "@/components/optimizedImage"; // Import your Cloudinary component
+import { motion } from "framer-motion";
 
 export function About() {
   const navigate = useNavigate();
@@ -13,44 +12,64 @@ export function About() {
   };
 
   return (
-    <section id="about" className="bg-background dark:bg-gray-900 px-4 sm:px-10 py-12">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* TEXT SECTION */}
-          <div className="text-center md:text-left">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tighter mb-6 text-foreground dark:text-white">
-              We're More Than Just Another Agency
-            </h2>
-            <p className="text-lg text-muted-foreground dark:text-gray-400 mb-6">
-              At Hesh Media, our mission is to elevate your brand’s presence with bold ideas and smart strategies. From crafting compelling campaigns to delivering tangible results, our team is dedicated to your success in the ever-changing digital landscape.
-            </p>
-            <p className="text-lg text-muted-foreground dark:text-gray-400">
-              Founded in 2023 in Amritsar, we’ve partnered with brands to achieve exceptional growth and redefine their digital impact.
-            </p>
-            <div className="mt-10 flex justify-center md:justify-start">
-              <Button
-                size="lg"
-                className="rounded-full px-8 bg-primary dark:bg-blue-600 text-primary-foreground hover:bg-primary/90 dark:hover:bg-blue-500"
-                onClick={handleNavigateToAbout}
-              >
-                Know Our Team
-              </Button>
-            </div>
-          </div>
+    <section className="relative bg-background dark:bg-gray-900 px-6 lg:px-20">
+      <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-16">
+        
+        {/* Image Section with Continuous Floating Animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: 1,
+            y: [0, -10, 0], // Floating effect
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+            opacity: { duration: 1, ease: "easeOut" }
+          }}
+          className="mt-10 md:mt-0 mx-auto"
+        >
+          <img
+            src="/assets/About-vector.png"
+            alt="Teamwork"
+            className="w-full max-w-md md:max-w-lg"
+          />
+        </motion.div>
 
-          {/* IMAGE SECTION */}
-          <div className="relative flex justify-center">
-            <div className="relative w-full max-w-xs sm:max-w-md md:max-w-lg rounded-2xl overflow-hidden">
-              <OptimizedImage
-                publicId="Gallery/e4pmkm398fwenuajhnrv"
-                alt="Office"
-                className="w-full h-auto object-cover aspect-[4/3] sm:aspect-[16/9] rounded-2xl"
-              />
-              <div className="absolute inset-0 rounded-2xl border-4 border-transparent group-hover:border-[#58a6ff]/50 transition-all duration-300"></div>
-            </div>
-          </div>
-        </div>
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-xl text-center md:text-left"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+            We're More Than Just Another Agency
+          </h2>
+          <p className="mt-4 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+            At <span className="font-semibold text-blue-600">Hesh Media</span>, our mission is to elevate your brand’s presence with bold ideas and smart strategies. From crafting compelling campaigns to delivering tangible results, our team is dedicated to your success in the ever-changing digital landscape.
+          </p>
+          <p className="mt-4 text-gray-700 dark:text-gray-300 text-lg">
+            Founded in 2023 in Amritsar, we’ve partnered with brands to achieve exceptional growth and redefine their digital impact.
+          </p>
+
+          {/* Button with Advanced Hover Effects */}
+          <motion.button
+            onClick={handleNavigateToAbout}
+            whileHover={{
+              scale: 1.1,
+              background: "linear-gradient(135deg, #2563eb, #1e3a8a)",
+              transition: { duration: 0.3 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md font-semibold text-lg transition-all duration-300 hover:shadow-lg"
+          >
+            Know Our Team →
+          </motion.button>
+        </motion.div>
+
       </div>
     </section>
   );
-}
+};

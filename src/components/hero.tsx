@@ -1,50 +1,61 @@
-import { Button } from "@/components/ui/button";
-import { Link } from "react-scroll";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Typewriter } from "./ui/typewriter";
 
 export function Hero() {
+  const [hovered, setHovered] = useState(false);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-background dark:bg-gray-900">
-      <div className="absolute inset-0 overflow-hidden">
-        <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="hero-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-              <circle cx="20" cy="20" r="1" fill="currentColor" className="text-primary/10 dark:text-blue-500/20" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#hero-pattern)" />
-        </svg>
-      </div>
-      <div className="container relative z-10 mx-auto px-4 text-center">
-        <h1
-          className="text-5xl md:text-7xl font-bold tracking-tighter mb-6"
-          style={{ color: "#3975FA" }}
+    <div className="flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 md:px-20 min-h-screen bg-background dark:bg-gray-900 relative overflow-hidden">
+      {/* Left Side Content */}
+      <div className="space-y-6 md:space-y-8 max-w-xl md:w-1/2 relative z-10 text-center md:text-left">
+        <div
+          className={`border-2 border-gray-300 rounded-full px-6 py-3 text-lg font-semibold w-64 sm:w-72 transition-all duration-300 mx-auto md:mx-0 ${
+            hovered ? "bg-blue-500 text-white" : "text-gray-600 dark:text-white"
+          }`}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
         >
-          Hesh Media
+          Welcome To Heshmedia
+        </div>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+          Empower Your Business <br />
+          <span>
+            <Typewriter
+              text={[
+                "Stand Out Online",
+                "Boost Engagement",
+                "Grow Your Business",
+                "Dominate Digital",
+                "Convert More Customers",
+                "Build Stunning Websites",
+              ]}
+              speed={70}
+              className="text-blue-600"
+              waitTime={1500}
+              deleteSpeed={40}
+              cursorChar={"_"}
+            />
+          </span>
         </h1>
-
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-foreground dark:text-white">
-          Transform Your <span className="text-red-500 dark:text-red-400">Social Media</span> Presence
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-          Empowering brands with impactful content, elevated strategies, and unmatched growth to thrive in the digital landscape.
-        </p>
-
-        {/* Updated Button */}
-        <Link
-          to="contact"
-          smooth={true}
-          duration={200}
-          offset={-53}
-          className="inline-block"
-        >
-          <Button
-            size="lg"
-            className="rounded-full px-8 bg-primary dark:bg-blue-600 text-primary-foreground hover:bg-primary/90 dark:hover:bg-blue-500 w-full"
-          >
-            Work With Us
-          </Button>
-        </Link>
+        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg rounded-full shadow-lg hover:scale-105 transition-transform">
+          Get Started Now
+        </button>
       </div>
-    </section>
+
+      {/* Right Side Image */}
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: [0, -10, 0] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        className="md:w-1/2 flex justify-center relative pt-10 md:pt-0"
+      >
+        <img
+          src="/assets/hero-banner.png"
+          alt="Floating Illustration"
+          className="w-full max-w-xs sm:max-w-md md:max-w-lg opacity-90"
+        />
+      </motion.div>
+    </div>
   );
 }
