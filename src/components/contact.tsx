@@ -11,6 +11,7 @@ export function Contact() {
   const { toast } = useToast();
   const form = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
+  
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,11 +26,12 @@ export function Contact() {
         )
         .then(
           () => {
-            toast({ title: "Message sent!", description: "We'll get back to you soon.", variant: "default" });
+            toast({ title: "Message sent!", description: "We'll get back to you soon.", open: true, onOpenChange: () => {} });
             form.current?.reset();
+            
           },
           () => {
-            toast({ title: "Error", description: "Something went wrong. Try again later.", variant: "destructive" });
+            toast({ title: "Error", description: "Something went wrong. Try again later.", open: true, onOpenChange: () => {} });
           }
         )
         .finally(() => setIsSending(false));

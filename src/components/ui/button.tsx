@@ -6,7 +6,11 @@ interface ButtonProps {
   icon?: React.ReactNode; // For passing icons
   iconPosition?: "left" | "right"; // Where the icon should appear
   onClick?: () => void; // Optional click handler
+  type?: "button" | "submit" | "reset"; // ✅ Add this line
+  disabled?: boolean; // ✅ Add disabled prop
+  className?: string; // ✅ Allow custom class names
 }
+
 
 const Button = ({ children, icon, iconPosition = "left", onClick }: ButtonProps) => {
   return (
