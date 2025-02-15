@@ -6,11 +6,11 @@ export function Hero() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 md:px-20 min-h-screen bg-background dark:bg-gray-900 relative overflow-hidden">
+    <div className="flex flex-col md:flex-row items-center justify-center md:justify-between pt-24 px-6 sm:px-10 md:px-20 min-h-screen bg-background dark:bg-gray-900 relative overflow-hidden">
       {/* Left Side Content */}
       <div className="space-y-6 md:space-y-8 max-w-xl md:w-1/2 relative z-10 text-center md:text-left">
         <div
-          className={`border-2 border-gray-300 rounded-full px-6 py-3 text-lg font-semibold w-64 sm:w-72 transition-all duration-300 mx-auto md:mx-0 ${
+          className={`border-2 border-gray-300 w-fit rounded-full px-6 py-3 text-lg font-semibold transition-all duration-300 mx-auto md:mx-0 ${
             hovered ? "bg-blue-500 text-white" : "text-gray-600 dark:text-white"
           }`}
           onMouseEnter={() => setHovered(true)}
@@ -48,7 +48,7 @@ export function Hero() {
         initial={{ y: 0 }}
         animate={{ y: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        className="md:w-1/2 flex justify-center relative pt-10 md:pt-0"
+        className="md:w-1/2 flex justify-center relative mt-8 md:mt-0"
       >
         <img
           src="/assets/hero-banner.png"

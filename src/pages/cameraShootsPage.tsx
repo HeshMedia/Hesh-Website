@@ -3,10 +3,10 @@ import { cloudinary } from "../config/cloudinary"; // Cloudinary config to gener
 
 export function CameraShootsPage() {
   const workExamples = [
-    { type: "video", src: "/assets/services/shoots/video1.mp4" },
-    { type: "video", src: "/assets/services/shoots/video3.mp4" },
-    { type: "video", src: "/assets/services/shoots/video2.mp4" },
-    { type: "video", src: "/assets/services/shoots/video4.mp4" },
+    { type: "video", src: "/assets/Services/shoots/video1.mp4" },
+    { type: "video", src: "/assets/Services/shoots/video3.mp4" },
+    { type: "video", src: "/assets/Services/shoots/video2.mp4" },
+    { type: "video", src: "/assets/Services/shoots/video4.mp4" },
   ];
 
   const serviceContent = `

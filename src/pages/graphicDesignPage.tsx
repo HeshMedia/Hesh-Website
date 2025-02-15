@@ -23,18 +23,21 @@ export function GraphicDesignPage() {
       title="Graphic Designing"
       description="Create visually stunning content with our professional graphic design services."
       content={serviceContent}
-      images={["Services/gd/vk2bq9xc1p8nofwwmhhp.png", "Services/gd/lwhos3fezvq2jktrz1hi.png"]} // Pass any example images if needed
+      images={[
+        "Services/gd/vk2bq9xc1p8nofwwmhhp.png",
+        "Services/gd/lwhos3fezvq2jktrz1hi.png",
+      ]} // Pass any example images if needed
       hideWorkSection={false}
-      
+      aspectRatio="1/1" // Set card container to square since images are 3375x3375
     >
       {/* Work Examples */}
       {workExamples.map((image, index) => (
         <OptimizedImage
           key={index}
-          publicId={image}  // Cloudinary public ID for graphic design work example images
+          publicId={image} // Cloudinary public ID for graphic design work example images
           alt={`Design Example ${index + 1}`}
-          transformations={(image) =>
-            image.resize(Resize.fill().width(380).height(380)) // Apply square resize (380x380 or adjust to your size)
+          transformations={(img) =>
+            img.resize(Resize.fill().width(380).height(380)) // Resize to a square thumbnail
           }
           className="rounded-md" // Maintain rounded corners
         />

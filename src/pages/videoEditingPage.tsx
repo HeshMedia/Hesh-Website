@@ -3,14 +3,14 @@ import { ServiceLayout } from "@/components/serviceLayout";
 
 export function VideoEditingPage() {
   const workExamples = [
-    "/assets/services/ve/video1.mp4",
-    "/assets/services/ve/video2.mp4",
-    "/assets/services/ve/video3.mp4",
-    "/assets/services/ve/video4.mp4",
-    "/assets/services/ve/video5.mp4",
-    "/assets/services/ve/video6.mp4",
-    "/assets/services/ve/video7.mp4",
-    "/assets/services/ve/video8.mp4",
+    "/assets/Services/ve/video2.mp4",
+    "/assets/Services/ve/video1.mp4",
+    "/assets/Services/ve/video3.mp4",
+    "/assets/Services/ve/video4.mp4",
+    "/assets/Services/ve/video5.mp4",
+    "/assets/Services/ve/video6.mp4",
+    "/assets/Services/ve/video7.mp4",
+    "/assets/Services/ve/video8.mp4",
   ];
 
   const serviceContent = `
