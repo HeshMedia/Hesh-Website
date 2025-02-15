@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { ServiceNavbar } from "@/components/serviceNavbar";
 import { Footer } from "@/components/footer";
 import { WhatsApp } from "@/components/whatsapp";
